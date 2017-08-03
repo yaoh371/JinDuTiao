@@ -1,0 +1,23 @@
+body{height: 100%; height: 100%; background: #f4f9fe;}
+.a
+{
+    /*         width:100px;
+             height:100px;
+             background:red;
+             position:relative;
+             -webkit-animation:mymove 5s infinite;*/
+}
+
+.b
+{ width:0px;
+    height:35px;
+    background:red;
+    position:relative;
+    -webkit-animation:mymove 5s;
+    -webkit-animation:mymove2 5s;
+    animation-fill-mode : forwards
+}
+.a img{
+    width: 312px;
+    height: auto;
+}

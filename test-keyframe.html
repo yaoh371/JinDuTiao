@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @-webkit-keyframes mymove2
+        {
+            from {width: 0px;}
+            to {width: 312px;}
+        }
+        @-webkit-keyframes mymove /* Safari and Chrome */
+        {
+            from {width: 0px;}
+            to {width: 312px;}
+        }
+
+    </style>
+</head>
+<body>
+<button id="buttonClick">进度开始</button>
+<div id="a" class="a">
+    <img src="img/bar.png" alt="进度条">
+</div>
+<div>
+    思路：  1. 当点击按钮的时候更换div的className;
+            2. @keyframe开始为0； 100%宽度为总长度；
+            3. JS获取style里边的html, 动态修改HTML；其中的width为后台的数据
+    重点： 需要UI 提供进度条图， 中间为空心；
+
+</div>
+<script type="text/javascript" src="jquery-1.10.1.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#buttonClick').click(function(){
+            console.log($("#a")[0].className);
+            $("#a")[0].className ='b';
+//            console.log(document.styleSheets[0].cssRules[2].cssText);
+//            document.styleSheets[0].cssRules[2].cssText = '@-webkit-keyframes mymove2 {0% { width: 100px; }100% { width: 150px; }}'
+            $('style')[0].innerHTML = "@-webkit-keyframes mymove2{from {width: 0px;}to {width: 150px;}}@-webkit-keyframes mymove /* Safari and Chrome */{from {width: 0px;}to {width: 150px;}}"
+                                                                                    //width动态数据，为后台提供
+        });
+    })
+
+</script>
+</body>
+</html>
